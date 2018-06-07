@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.SignupActivity">
+
+    <ImageView
+        android:id="@+id/logo_id"
+        android:layout_width="191dp"
+        android:layout_height="142dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/txt_user_name_id"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="210dp"
+        android:ems="10"
+        android:hint="@string/str_username"
+        android:inputType="textNoSuggestions|textPersonName" />
+
+    <EditText
+        android:id="@+id/txt_phone_country_code_id"
+        android:layout_width="52dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txt_user_name_id"
+        android:layout_alignTop="@+id/txt_phone_ddd_id"
+        android:ems="10"
+        android:hint="@string/str_hint_countrycode"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/txt_phone_ddd_id"
+        android:layout_width="41dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="235dp"
+        android:layout_marginStart="140dp"
+        android:ems="10"
+        android:hint="@string/str_hint_ddd"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/txt_phone_id"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/txt_phone_country_code_id"
+        android:layout_marginEnd="61dp"
+        android:ems="10"
+        android:hint="@string/str_hint_phonenumber"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/btn_signup_id"
+        style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/str_btn_signup"
+        android:textColor="@color/common_google_signin_btn_text_dark" />
+</RelativeLayout>

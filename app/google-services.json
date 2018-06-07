@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "932287252447",
+    "firebase_url": "https://secrechat.firebaseio.com",
+    "project_id": "secrechat",
+    "storage_bucket": "secrechat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932287252447:android:84ae833f76e5252e",
+        "android_client_info": {
+          "package_name": "pdm.recife.ifpe.edu.br.secrecheat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932287252447-fvr3ac2pk7m5dloo873q3io28jn03org.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pdm.recife.ifpe.edu.br.secrecheat",
+            "certificate_hash": "8ed5980c3c0e71631591eb6995efdcf12fc19d94"
+          }
+        },
+        {
+          "client_id": "932287252447-n220naedcs1g9p4se4v3758umidj1due.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "932287252447-n220naedcs1g9p4se4v3758umidj1due.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfGwcSZiv8txOpCnY5-_Kp6I1lu4JG0Sc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932287252447-n220naedcs1g9p4se4v3758umidj1due.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

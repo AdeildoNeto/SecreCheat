@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Secrecheat</string>
+    <string name="str_username">Digite seu nome de usuário</string>
+    <string name="str_hint_countrycode">+55</string>
+    <string name="str_hint_ddd">99</string>
+    <string name="str_hint_phonenumber">999999999</string>
+    <string name="str_btn_signup">Cadastrar</string>
+    <string name="str_validation">Validação</string>
+</resources>
