@@ -4,49 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#660101"
     tools:context=".Activities.SignupStepTwo">
 
 
     <ImageView
-        android:id="@+id/logo_id"
-        android:layout_width="191dp"
-        android:layout_height="142dp"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
-        android:src="@drawable/logo" />
+        android:layout_marginTop="39dp"
+        app:srcCompat="@drawable/step_two_logo" />
 
     <TextView
-        android:id="@+id/view_txt_validation_id"
-        android:layout_width="wrap_content"
+        android:id="@+id/step_two_text_id"
+        android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="213dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/str_validation"
-        android:textAppearance="@android:style/TextAppearance.Material.Title"
-        android:textSize="40sp" />
+        android:layout_marginTop="215dp"
+        android:text="@string/step_two_text_str"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/username_view_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/step_two_text_id"
+        android:layout_marginBottom="252dp"
+        android:text="@string/username_view_str"
+        android:textColor="@android:color/background_light" />
 
     <EditText
-        android:id="@+id/txt_validation_id"
+        android:id="@+id/user_name_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="226dp"
+        android:layout_alignBaseline="@+id/username_view_id"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="74dp"
+        android:backgroundTint="@android:color/background_light"
         android:ems="10"
-        android:hint="Digite o código"
-        android:inputType="number"
-        android:textAlignment="center" />
+        android:hint="Digite aqui seu usuário!"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/background_light" />
 
     <Button
-        android:id="@+id/btn_validate_id"
+        android:id="@+id/btn_signup_two_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="125dp"
-        android:text="Button" />
+        android:layout_marginBottom="123dp"
+        android:background="#660101"
+        android:text="@string/signup_btn_str"
+        android:textColor="@android:color/white" />
 
 </RelativeLayout>

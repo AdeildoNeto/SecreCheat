@@ -6,4 +6,7 @@
     <string name="str_hint_phonenumber">999999999</string>
     <string name="str_btn_signup">Cadastrar</string>
     <string name="str_validation">Validação</string>
+    <string name="step_two_text_str">Crie um usuário único para se identificar com outros usuário, ou não!</string>
+    <string name="username_view_str">Usuário:</string>
+    <string name="signup_btn_str">Cadastrar!</string>
 </resources>

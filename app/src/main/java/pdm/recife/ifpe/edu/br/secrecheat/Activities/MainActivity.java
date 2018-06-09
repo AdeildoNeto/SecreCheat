@@ -3,8 +3,10 @@ package pdm.recife.ifpe.edu.br.secrecheat.Activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -16,25 +18,19 @@ public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference firebase = FirebaseDatabase.getInstance().getReference();
 
-    FirebaseAuth auth = FirebaseAuth.getInstance();
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-    private User user;
+    private TextView txt;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (auth.getCurrentUser() != null) {
+        txt = findViewById(R.id.user);
 
-
-
-        } else {
-            Intent signupIt = new Intent(this, SignupActivity.class);
-            startActivity(signupIt);
-            finish();
-
-        }
+                txt.setText(user.getDisplayName());
 
     }
 
