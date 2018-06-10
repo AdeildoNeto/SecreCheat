@@ -3,28 +3,22 @@ package pdm.recife.ifpe.edu.br.secrecheat.Activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
-import com.github.rtoshiro.util.format.SimpleMaskFormatter;
-import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Arrays;
 import java.util.Random;
 
+import pdm.recife.ifpe.edu.br.secrecheat.Config.FirebaseConfig;
 import pdm.recife.ifpe.edu.br.secrecheat.R;
 
 public class SignupActivity extends Activity {
 
 
-    private  FirebaseAuth auth = FirebaseAuth.getInstance();
+    private  FirebaseAuth auth = FirebaseConfig.getAuth();
 
     private int token;
 
@@ -50,7 +44,7 @@ public class SignupActivity extends Activity {
                             .createSignInIntentBuilder()
                             .setAvailableProviders(Arrays.asList(
                                     new AuthUI.IdpConfig.PhoneBuilder().build()
-                            ))
+                            )).setTheme(R.style.AuthTheme)
                             .build(),
                     token);
 
@@ -83,7 +77,7 @@ public class SignupActivity extends Activity {
 
             // Successfully signed in
             if (resultCode == RESULT_OK) {
-                Intent stepTwoIntent = new Intent(this, SignupStepTwo.class);
+                Intent stepTwoIntent = new Intent(this, SignupStepTwoActivity.class);
                 startActivity(stepTwoIntent);
                 finish();
             } else {

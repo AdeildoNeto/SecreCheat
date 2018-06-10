@@ -1,5 +1,7 @@
 package pdm.recife.ifpe.edu.br.secrecheat.Domain;
 
+import com.google.firebase.database.Exclude;
+
 public class User {
 
 
@@ -7,11 +9,22 @@ public class User {
 
     private String phoneNumber;
 
-    public String getUsername() {
+    @Exclude
+    private String identifier;
+
+    public String getuserName() {
         return userName;
     }
 
-    public void setUsername(String username) {
-        this.userName = username;
+    public void setuserName(String userName) {
+        this.userName = userName;
     }
+
+    public String getIdentifier() {return identifier; }
+
+    public void setIdentifier(String identifier) { this.identifier = identifier; }
+
+    public String getPhoneNumber() { return phoneNumber; }
+
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 }

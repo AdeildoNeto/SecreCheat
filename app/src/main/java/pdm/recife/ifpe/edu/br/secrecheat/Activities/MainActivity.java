@@ -10,30 +10,30 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import pdm.recife.ifpe.edu.br.secrecheat.Config.FirebaseConfig;
 import pdm.recife.ifpe.edu.br.secrecheat.Domain.User;
 import pdm.recife.ifpe.edu.br.secrecheat.R;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private DatabaseReference firebase = FirebaseDatabase.getInstance().getReference();
-
-    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-    private TextView txt;
-
+    private FirebaseAuth auth = FirebaseConfig.getAuth();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txt = findViewById(R.id.user);
-
-                txt.setText(user.getDisplayName());
-
+        if(auth.getCurrentUser() != null ){
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else{
+            Intent intent = new Intent(this, SignupActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
-
-
 
 }

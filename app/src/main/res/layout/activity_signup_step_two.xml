@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#660101"
-    tools:context=".Activities.SignupStepTwo">
+    tools:context=".Activities.SignupStepTwoActivity">
 
 
     <ImageView
@@ -58,7 +58,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="123dp"
-        android:background="#660101"
+        android:background="@color/colorPrimary"
         android:text="@string/signup_btn_str"
         android:textColor="@android:color/white" />
 

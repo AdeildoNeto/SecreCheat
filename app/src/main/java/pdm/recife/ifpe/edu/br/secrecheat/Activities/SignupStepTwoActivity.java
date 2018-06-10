@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -13,20 +12,24 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
+import pdm.recife.ifpe.edu.br.secrecheat.Config.FirebaseConfig;
 import pdm.recife.ifpe.edu.br.secrecheat.R;
+import pdm.recife.ifpe.edu.br.secrecheat.Services.UserService;
 
-public class SignupStepTwo extends AppCompatActivity {
+public class SignupStepTwoActivity extends AppCompatActivity {
 
 
-    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private FirebaseUser user = FirebaseConfig.getAuth().getCurrentUser();
 
-     EditText username;
+    private EditText username;
 
-    Button signupBtn;
+    private Button signupBtn;
+
+    private UserService userService;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,29 +49,38 @@ public class SignupStepTwo extends AppCompatActivity {
 
     private void setUser() {
 
-
         username = findViewById(R.id.user_name_id);
 
+        String formatedUserNamer = username.getText().toString().replace(" ", "");
 
-        if (username.getText().toString() == "" || username.getText().toString() == null) {
-            Toast.makeText(this, "Preencha os campos", Toast.LENGTH_SHORT).show();
+        if (formatedUserNamer.isEmpty()) {
+            Toast.makeText(SignupStepTwoActivity.this, "Preencha o campo!", Toast.LENGTH_SHORT).show();
 
         } else {
 
             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                    .setDisplayName(username.getText().toString()).build();
+                    .setDisplayName(formatedUserNamer).build();
 
             user.updateProfile(profileUpdates)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        boolean result = false;
+
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Intent mainIntent = new Intent(SignupStepTwo.this, MainActivity.class);
+                                Toast.makeText(SignupStepTwoActivity.this, "Usuário cadastrado!", Toast.LENGTH_SHORT).show();
+                                userService = new UserService();
+
+                                userService.getUser().setIdentifier(user.getUid());
+                                userService.getUser().setuserName(user.getDisplayName());
+                                userService.getUser().setPhoneNumber(user.getPhoneNumber());
+
+                                userService.saveUser(userService.getUser());
+
+                                Intent mainIntent = new Intent(SignupStepTwoActivity.this, MainActivity.class);
                                 startActivity(mainIntent);
                                 finish();
                             } else {
-                                Toast.makeText(SignupStepTwo.this, "Algo deu errado!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignupStepTwoActivity.this, "Algo deu errado!", Toast.LENGTH_SHORT).show();
 
 
                             }

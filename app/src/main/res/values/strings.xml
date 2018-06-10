@@ -9,4 +9,8 @@
     <string name="step_two_text_str">Crie um usuário único para se identificar com outros usuário, ou não!</string>
     <string name="username_view_str">Usuário:</string>
     <string name="signup_btn_str">Cadastrar!</string>
+    <string name="item_settings">Configurações</string>
+    <string name="item_logout">Sair</string>
+    <string name="item_search">Pesquisar</string>
+    <string name="item_add_person">Adicionar novo contato</string>
 </resources>
