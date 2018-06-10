@@ -48,8 +48,7 @@
         android:ems="10"
         android:hint="Digite aqui seu usuário!"
         android:inputType="textPersonName"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/background_light" />
+        />
 
     <Button
         android:id="@+id/btn_signup_two_id"

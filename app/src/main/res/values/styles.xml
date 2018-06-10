@@ -8,7 +8,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:itemBackground">@android:color/white</item>
-        <item name="android:textColor">@android:color/black</item>
+
 
     </style>
 
@@ -16,7 +16,7 @@
     <style name="AuthTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="android:buttonStyle">@style/DefaultButton</item>
+        <item name="colorAccent">@color/colorAccent</item>
 
     </style>
 

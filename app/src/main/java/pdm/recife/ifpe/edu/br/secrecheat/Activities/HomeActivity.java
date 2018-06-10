@@ -1,7 +1,10 @@
 package pdm.recife.ifpe.edu.br.secrecheat.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,8 +15,10 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import pdm.recife.ifpe.edu.br.secrecheat.Adapters.TabAdapter;
 import pdm.recife.ifpe.edu.br.secrecheat.Config.FirebaseConfig;
 import pdm.recife.ifpe.edu.br.secrecheat.R;
+import pdm.recife.ifpe.edu.br.secrecheat.Shared.SlidingTabLayout;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -21,12 +26,33 @@ public class HomeActivity extends AppCompatActivity {
 
     private FirebaseAuth auth = FirebaseConfig.getAuth();
 
+    private SlidingTabLayout stl;
+
+    private ViewPager vp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         setUpToolbar();
+        setUpTabs();
+    }
+
+
+    public void setUpTabs(){
+
+        stl = findViewById(R.id.sltl_home_id);
+        vp = findViewById(R.id.vp_page_id);
+
+        stl.setDistributeEvenly(true);
+
+        stl.setSelectedIndicatorColors(ContextCompat.getColor(this, R.color.colorAccent));
+
+        TabAdapter tabAdapter = new TabAdapter(getSupportFragmentManager());
+        vp.setAdapter(tabAdapter);
+        stl.setViewPager(vp);
+
     }
 
 
