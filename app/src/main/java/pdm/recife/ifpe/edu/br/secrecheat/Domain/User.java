@@ -7,10 +7,12 @@ public class User {
 
     private String userName;
 
+    private String name;
+
     private String phoneNumber;
 
     @Exclude
-    private String identifier;
+    private String Uid;
 
     public String getuserName() {
         return userName;
@@ -20,11 +22,19 @@ public class User {
         this.userName = userName;
     }
 
-    public String getIdentifier() {return identifier; }
+    public String getUid() {return Uid; }
 
-    public void setIdentifier(String identifier) { this.identifier = identifier; }
+    public void setUid(String uid) { this.Uid = uid; }
 
     public String getPhoneNumber() { return phoneNumber; }
 
     public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

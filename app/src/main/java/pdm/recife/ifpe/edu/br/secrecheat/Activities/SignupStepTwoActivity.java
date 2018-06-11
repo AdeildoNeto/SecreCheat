@@ -70,7 +70,7 @@ public class SignupStepTwoActivity extends AppCompatActivity {
                                 Toast.makeText(SignupStepTwoActivity.this, "Usuário cadastrado!", Toast.LENGTH_SHORT).show();
                                 userService = new UserService();
 
-                                userService.getUser().setIdentifier(user.getUid());
+                                userService.getUser().setUid(user.getUid());
                                 userService.getUser().setuserName(user.getDisplayName());
                                 userService.getUser().setPhoneNumber(user.getPhoneNumber());
 

@@ -13,6 +13,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import pdm.recife.ifpe.edu.br.secrecheat.Config.FirebaseConfig;
 import pdm.recife.ifpe.edu.br.secrecheat.Domain.User;
 import pdm.recife.ifpe.edu.br.secrecheat.R;
+import pdm.recife.ifpe.edu.br.secrecheat.Shared.Base64Converter;
+import pdm.recife.ifpe.edu.br.secrecheat.Shared.Preferences;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if(auth.getCurrentUser() != null ){
+
+            Preferences preferences = new Preferences(MainActivity.this);
+
+            preferences.setUserIdentifier(Base64Converter.encode(auth.getCurrentUser().getPhoneNumber()));
+
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
             finish();
