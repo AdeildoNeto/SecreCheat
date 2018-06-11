@@ -12,5 +12,7 @@
         android:id="@+id/lv_contacts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|top" />
+        android:layout_gravity="center_horizontal|top"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1sp"/>
 </FrameLayout>
