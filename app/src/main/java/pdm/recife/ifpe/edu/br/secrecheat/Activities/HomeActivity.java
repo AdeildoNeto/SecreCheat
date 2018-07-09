@@ -172,7 +172,6 @@ public class HomeActivity extends AppCompatActivity {
 
                         contact.setContactIdentifier(userContactIdentifier);
                         contact.setContactName(contactUser.getuserName());
-                        contact.setContactName(contactUser.getPhoneNumber());
 
                         if(firebase.setValue(contact).isSuccessful()){
                             Toast.makeText(HomeActivity.this, "Contato adicionado!", Toast.LENGTH_SHORT).show();
